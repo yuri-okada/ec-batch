@@ -80,17 +80,17 @@ public class InsertCsvController implements CommandLineRunner{
 				item.setImagePath(itemList.get(4));
 				item.setDeleted(Boolean.valueOf(itemList.get(5)));
 				
-//				//ec-okadaプロジェクトにimageを保存する.
-//				String imageName=item.getImagePath();
-//				InputStream stream = new ByteArrayInputStream(imageName.getBytes("utf-8"));
-//
-////				//ローカルのフォルダを参照し画像情報を取得
-////				FileInputStream stream=new FileInputStream("C:\\Users\\chemi\\OneDrive\\デスクトップ\\研修\\画像"+"\\"+imageName);
-////				System.out.println(stream);
-//			
-//				//resousesのフォルダにコピー
-//				Files.copy(stream, Paths.get(
-//						"C:\\env\\springworkspace\\ec2020-okada\\src\\main\\resources\\static\\img_aloha", imageName));
+				//ec-okadaプロジェクトにimageを保存する.
+				String imageName=item.getImagePath();
+				//画像情報をinputStreamに変換
+				InputStream stream = new ByteArrayInputStream(imageName.getBytes("utf-8"));
+
+				//ローカルのフォルダを参照し画像情報を取得（こちらだと成功
+//				FileInputStream stream=new FileInputStream("C:\\Users\\chemi\\OneDrive\\デスクトップ\\研修\\画像"+"\\"+imageName);
+
+				//変換した画像情報を元にresousesのフォルダにコピーしネーミング
+				Files.copy(stream, Paths.get(
+						"C:\\env\\springworkspace\\ec2020-okada\\src\\main\\resources\\static\\img_aloha", imageName));
 				service.insertItem(item);
 			}			
 			
