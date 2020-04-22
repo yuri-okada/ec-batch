@@ -1,0 +1,4 @@
+name,description,price_m,price_l,image_path,deleted
+コウペンちゃん,あなたを肯定してくれる存在です,100,1000,e2.png,FALSE
+テスト,テストです,500,1000,delivery_pizza.png,FALSE
+テスト2,追加,10000,200,test_sample.jpg,FALSE
